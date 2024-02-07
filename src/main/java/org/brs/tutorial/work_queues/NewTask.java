@@ -1,4 +1,4 @@
-package org.example.work_queues;
+package org.brs.tutorial.work_queues;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

@@ -1,4 +1,4 @@
-package org.example.test_task;
+package org.brs.test_task;
 
 public interface TargetedRabbitPublisher extends RabbitPublisher{
     public void setExchangeName(String exchangeName);

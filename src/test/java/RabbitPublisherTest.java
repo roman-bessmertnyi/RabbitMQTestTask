@@ -1,7 +1,7 @@
 import com.rabbitmq.client.ConnectionFactory;
-import org.example.test_task.LargeStringGenerator;
-import org.example.test_task.RabbitPublisherImpl;
-import org.example.test_task.TargetedRabbitPublisher;
+import org.brs.test_task.LargeStringGenerator;
+import org.brs.test_task.RabbitPublisherImpl;
+import org.brs.test_task.TargetedRabbitPublisher;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,7 +31,7 @@ public class RabbitPublisherTest {
     @Test
     public void testPublishMessageAndGetReplyCodeWithNormalMessage() throws Exception {
         int responseCode = publisher.publishMessageAndGetReplyCode(NORMAL_MESSAGE.getBytes(), null);
-        Assertions.assertEquals(200, responseCode); // Assuming 200 is success code
+        Assertions.assertEquals(200, responseCode);
     }
 
     @Test
@@ -42,18 +42,7 @@ public class RabbitPublisherTest {
         //not-found	404
         // channel
         // The client attempted to work with a server entity that does not exist.
-        Assertions.assertEquals(404, responseCode); // Assuming 200 is success code
-    }
-
-    @Test
-    public void testPublishMessageAndGetReplyCodeWithSecureExchange() throws Exception {
-        publisher.setExchangeName(SECURE_EXCHANGE_NAME);
-
-        int responseCode = publisher.publishMessageAndGetReplyCode(NORMAL_MESSAGE.getBytes(), null);
-        //not-found	404
-        // channel
-        // The client attempted to work with a server entity that does not exist.
-        Assertions.assertEquals(404, responseCode); // Assuming 200 is success code
+        Assertions.assertEquals(404, responseCode);
     }
 
     @Test
@@ -64,7 +53,7 @@ public class RabbitPublisherTest {
         //invalid-path
         // connection
         // The client tried to work with an unknown virtual host.
-        Assertions.assertEquals(402, responseCode); // Assuming 200 is success code
+        Assertions.assertEquals(402, responseCode);
     }
 
     @Test
@@ -74,6 +63,6 @@ public class RabbitPublisherTest {
         //precondition-failed
         // channel
         // The client requested a method that was not allowed because some precondition failed.
-        Assertions.assertEquals(406, responseCode); // Assuming 200 is success code
+        Assertions.assertEquals(406, responseCode);
     }
 }

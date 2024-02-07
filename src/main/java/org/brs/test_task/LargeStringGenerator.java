@@ -1,4 +1,4 @@
-package org.example.test_task;
+package org.brs.test_task;
 
 public class LargeStringGenerator {
 

@@ -1,4 +1,4 @@
-package org.example.hello;
+package org.brs.tutorial.hello;
 
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
